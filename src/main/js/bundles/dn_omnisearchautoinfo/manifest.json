@@ -1,0 +1,45 @@
+{
+  "Bundle-SymbolicName": "dn_omnisearchautoinfo",
+  "Bundle-Version": "1.0.0-SNAPSHOT",
+  "Bundle-Name": "${bundleName}",
+  "Bundle-Description": "${bundleDescription}",
+  "Bundle-Vendor": "con terra GmbH",
+  "Product-Name": "con terra Developer Network",
+  "Bundle-Category": [
+    "sample"
+  ],
+  "Require-Bundle": [
+    {
+      "name": "omnisearch"
+    },
+    {
+      "name": "contentviewer"
+    }
+  ],
+  "Bundle-Icon": {},
+  "Bundle-License": {},
+  "Components": [
+    {
+      "name": "OmniSearchContentViewerController",
+      "provides": [
+        "ct.api.omnisearch.ResultHandler"
+      ],
+      "properties": {
+        "id": "OmniSearchContenViewerController",
+        "type": [
+          "select"
+        ]
+      },
+      "references": [
+        {
+          "name": "_mapModel",
+          "providing": "ct.mapping.map.MapModel"
+        },
+        {
+          "name": "_contentViewer",
+          "providing": "ct.contentviewer.ContentViewer"
+        }
+      ]
+    }
+  ]
+}
