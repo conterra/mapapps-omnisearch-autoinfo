@@ -10,10 +10,12 @@
   ],
   "Require-Bundle": [
     {
-      "name": "omnisearch"
+      "name": "omnisearch",
+      "version": "^3.2.1"
     },
     {
-      "name": "contentviewer"
+      "name": "contentviewer",
+      "version": "^3.2.1"
     }
   ],
   "Bundle-Icon": {},
