@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 define({
-    bundleName: "OmniSearchSelector",
-    bundleDescription: "Dieses Bundle dient der Selektion nach einer OmniSearch-Suche",
-    toolName: "OmniSearchSelectorTool",
-    toolToolTip: "OmniSearchSelectorTool"
+    bundleName: "OmniSearch Auto Info",
+    bundleDescription: "Dieses Bundle \u00f6ffnet ein Featureinfo-Fenster nachdem eine Suche erfolgreich war"
 });

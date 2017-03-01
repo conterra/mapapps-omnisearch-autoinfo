@@ -15,10 +15,8 @@
  */
 define({
     root: {
-        bundleName: "OmniSearchSelector",
-        bundleDescription: "This bundle selects features after an OmniSearch",
-        toolName: "OmniSearchSelectorTool",
-        toolToolTip: "OmniSearchSelectorTool"
+        bundleName: "OmniSearch Auto Info",
+        bundleDescription: "This bundle activates a feature info after a search was successful"
     },
     de: true
 });
