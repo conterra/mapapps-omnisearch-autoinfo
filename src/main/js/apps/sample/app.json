@@ -23,6 +23,7 @@
       "locator@^3.2.1",
       "agssearch@^3.2.1",
       "omnisearch@^3.2.1",
+      "custominfo@^3.2.1",
       "dn_omnisearchautoinfo"
     ],
     "require": [
@@ -102,6 +103,36 @@
         "imagePosition": "above",
         "link": "http://developernetwork.conterra.de"
       }
+    },
+    "custominfo": {
+      "CustomInfoToggleTool": [
+        {
+          "id": "customInfoTool",
+          "activateOnStartup": true,
+          "title": "Information",
+          "tooltip": "custominfo",
+          "iconClass": "icon-custom-info-info",
+          "toolClass": "ctInfo",
+          "togglable": true,
+          "widgetSettings": {
+            "title": "Information",
+            "content": "This app shows the functionality of the Omnisearch Auto Info Bundle which opens a feature info after a search was successful.",
+            "window": {
+              "marginBox": {
+                "w": 300,
+                "h": 100,
+                "l": 25,
+                "b": 70
+              },
+              "draggable": true,
+              "closable": true,
+              "modal": false,
+              "maximizable": false,
+              "resizable": false
+            }
+          }
+        }
+      ]
     },
     "omnisearch": {
       "OmniSearchFactory": {
