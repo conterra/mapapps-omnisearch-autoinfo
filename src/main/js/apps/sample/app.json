@@ -93,8 +93,7 @@
             }
           }
         }
-      ],
-      "enabled": true
+      ]
     },
     "banner": {
       "BannerWidget": {
@@ -141,8 +140,7 @@
           "selectFirstResultOnEnter": false,
           "autoSelect": true
         }
-      },
-      "enabled": true
+      }
     },
     "map": {
       "MapState": {
@@ -200,8 +198,7 @@
       "ToolsetManager": {
         "toolsets": [
         ]
-      },
-      "enabled": true
+      }
     }
   }
 }
