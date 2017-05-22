@@ -14,12 +14,9 @@
  * limitations under the License.
  */
 define([
-    "dojo/_base/declare",
-    "dojo/_base/array",
-    "ct/Stateful",
-    "ct/array"
-], function (declare, d_array, Stateful, ct_array) {
-    return declare([Stateful], {
+    "dojo/_base/declare"
+], function (declare) {
+    return declare([], {
         activate: function () {
             var properties = this._properties || {};
             this.id = properties.id || this.id;
