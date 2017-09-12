@@ -31,7 +31,6 @@ define([
             var context = {
                 storeId: store && store.id
             };
-            var geometry = item.geometry;
             console.debug("OmniSearchContentViewerController.handle: Show contentviewer:", item);
             this._contentViewer.showContentInfo(item, context);
         }
