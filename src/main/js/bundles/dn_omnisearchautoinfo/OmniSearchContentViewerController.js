@@ -21,6 +21,7 @@ define([
             var properties = this._properties || {};
             this.id = properties.id || this.id;
             this.type = properties.type || this.type;
+            this.ignoreStores = properties.ignoreStores || this.ignoreStores;
         },
         deactivate: function () {
 
@@ -31,6 +32,9 @@ define([
             var context = {
                 storeId: store && store.id
             };
+            if (this.ignoreStores.indexOf(context.storeId) >= 0){
+                return;
+            }
             console.debug("OmniSearchContentViewerController.handle: Show contentviewer:", item);
             this._contentViewer.showContentInfo(item, context);
         }
