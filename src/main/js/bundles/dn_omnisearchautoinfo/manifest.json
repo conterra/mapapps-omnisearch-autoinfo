@@ -27,7 +27,7 @@
         "ct.api.omnisearch.ResultHandler"
       ],
       "properties": {
-        "id": "OmniSearchContenViewerController",
+        "id": "OmniSearchContentViewerController",
         "type": [
           "select"
         ]
