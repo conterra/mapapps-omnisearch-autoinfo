@@ -14,20 +14,7 @@
  * limitations under the License.
  */
 module.exports = {
-    apptitle: "map.apps 4 Sample",
-    map: {
-        esrisites: {
-            title: "Standorte der Esri Deutschland Gruppe",
-            popup: {
-                address: "Adresse",
-                contact: "Kontakt",
-                tel: "Telefon:",
-                mail: "Email:",
-                link: "Internet:"
-            }
-        }
-    },
-
+    apptitle: "Omnisearch Autoinfo 4 Sample",
     info: "Das Modul öffnet das Popup automatisch, nachdem der Nutzer mit der Omnisuche gesucht hat. Um die Funktionalität zu erkunden, suchen Sie nach einem Flughafen in der Omnisearch.",
     search: "Suche"
 };

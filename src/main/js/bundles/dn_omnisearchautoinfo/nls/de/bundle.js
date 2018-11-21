@@ -16,5 +16,4 @@
 module.exports = {
     bundleName: "Omni Suche automaitsche Info",
     bundleDescription: "Das Modul öffnet das Popup automatisch, nachdem der Nutzer mit der Omnisuche gesucht hat."
-
 };

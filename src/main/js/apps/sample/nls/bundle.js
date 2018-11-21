@@ -15,20 +15,7 @@
  */
 module.exports = {
     root: {
-        apptitle: "map.apps 4 Sample",
-        map: {
-            esrisites: {
-                title: "Esri Germany Group Sites",
-                popup: {
-                    address: "Address",
-                    contact: "Contact",
-                    tel: "Telephone:",
-                    mail: "Email:",
-                    link: "Internet:"
-                }
-            }
-        },
-
+        apptitle: "Omnisearch Autoinfo 4 Sample",
         info: "This bundle opens a popup automatically after using the omnisearch. To discover the functionality search for an airport in the omnisearch",
         search: "search"
     },

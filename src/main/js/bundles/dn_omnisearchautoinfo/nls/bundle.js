@@ -16,7 +16,7 @@
 module.exports = {
     root: {
         bundleName: "Omni Search Auto Info",
-        bundleDescription: "This bundle opens a popup automatically after using the omnisearch.",
+        bundleDescription: "This bundle opens a popup automatically after using the omnisearch."
     },
     de: true
 };
