@@ -13,26 +13,51 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-define([
-    "dojo/_base/declare"
-], function (declare) {
-    return declare([], {
-        activate: function () {
-            var properties = this._properties || {};
-            this.id = properties.id || this.id;
-            this.type = properties.type || this.type;
-        },
-        deactivate: function () {
+import Graphic from "esri/Graphic";
 
-        },
-        handle: function (item, opts) {
-            opts = opts || {};
-            var store = opts.store;
-            var context = {
-                storeId: store && store.id
-            };
-            console.debug("OmniSearchContentViewerController.handle: Show contentviewer:", item);
-            this._contentViewer.showContentInfo(item, context);
+class OmniSearchContentViewerController {
+
+    activate() {
+        let properties = this._properties || {};
+        this.id = properties.id || this.id;
+        this.type = properties.type || this.type;
+        this.mapModel = this._mapWidgetModel;
+    }
+
+    deactivate() {
+
+    }
+
+    handle(item, opts) {
+        opts = opts || {};
+        let store = opts.store;
+        let layers = this.mapModel.get("map").get("layers");
+        let allLayersAndSublayers = layers.flatten((item) => {
+            return item.layers || item.sublayers;
+        });
+        let layer = allLayersAndSublayers.find((layer) => {
+            return layer.id === store.layerId;
+        });
+        if(!layer||!layer.popupTemplate){
+            return;
         }
-    });
-});
+        console.debug("OmniSearchContentViewerController.handle: Show contentviewer:", item);
+        let attributes = Object.assign({}, item);
+        let geom = attributes.geometry;
+        delete attributes.geometry;
+        let graphic = new Graphic({
+            geometry: geom,
+            attributes:attributes,
+            popupTemplate: layer.popupTemplate
+        });
+
+        graphic.layer = layer;
+
+        this.mapModel.view.popup.open({
+            features: [graphic],
+            updateLocationEnabled: true
+        });
+    }
+}
+
+module.exports = OmniSearchContentViewerController;

@@ -7,7 +7,16 @@ https://demos.conterra.de/mapapps/resources/apps/downloads_omnisearch_autoinfo/i
 
 Installation Guide
 ------------------
-Just add the bundle to your app.
+Add the bundle to your app and load an AGSsearch store with a layerId.
+
+Requirements
+------------------
+* map.apps 4.5.0 (or above)
+
+
+Restrictions
+------------------
+The layer needs to be loaded in the map and has to have a popup template.
 
 Development Guide
 ------------------

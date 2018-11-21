@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-define({
+module.exports = {
     root: {
-        bundleName: "OmniSearch Auto Info",
-        bundleDescription: "This bundle activates a feature info after a search was successful"
+        bundleName: "Omni Search Auto Info",
+        bundleDescription: "This bundle opens a popup automatically after using the omnisearch.",
     },
     de: true
-});
+};

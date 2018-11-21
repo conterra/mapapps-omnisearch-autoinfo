@@ -13,13 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-define({
+module.exports = {
     root: {
-        service: {
-            streets: "Streets",
-            topo: "Topography"
+        apptitle: "map.apps 4 Sample",
+        map: {
+            esrisites: {
+                title: "Esri Germany Group Sites",
+                popup: {
+                    address: "Address",
+                    contact: "Contact",
+                    tel: "Telephone:",
+                    mail: "Email:",
+                    link: "Internet:"
+                }
+            }
         },
-        search: "Enter a search term..."
+
+        info: "This bundle opens a popup automatically after using the omnisearch. To discover the functionality search for an airport in the omnisearch",
+        search: "search"
     },
-    de: true
-});
+    "de": true
+};

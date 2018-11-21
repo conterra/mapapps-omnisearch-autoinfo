@@ -13,21 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-module.exports = {
-    apptitle: "map.apps 4 Sample",
-    map: {
-        esrisites: {
-            title: "Standorte der Esri Deutschland Gruppe",
-            popup: {
-                address: "Adresse",
-                contact: "Kontakt",
-                tel: "Telefon:",
-                mail: "Email:",
-                link: "Internet:"
-            }
-        }
-    },
+const gulp = require("gulp");
+const run_sequence = require('run-sequence');
+const mapapps = require('ct-mapapps-gulp-js');
 
-    info: "Das Modul öffnet das Popup automatisch, nachdem der Nutzer mit der Omnisuche gesucht hat. Um die Funktionalität zu erkunden, suchen Sie nach einem Flughafen in der Omnisearch.",
-    search: "Suche"
-};
+mapapps.registerTasks({
+    themes: [/*"sample_theme"*/],
+    hasVuetify: true,
+    hasBaseThemes: true,
+    forceTranspile: true/*,
+    themeChangeTargets:{
+        "vuetify":[
+            "sample_theme"
+        ]
+    }*/
+});
+
+gulp.task("default", function(callback) {
+    run_sequence(
+            "copy-resources",
+            "themes-copy",
+            ["js-transpile", "themes-compile"],
+            callback);
+});

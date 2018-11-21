@@ -13,7 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-define({
-    bundleName: "OmniSearch Auto Info",
-    bundleDescription: "Dieses Bundle \u00f6ffnet ein Featureinfo-Fenster nachdem eine Suche erfolgreich war"
-});
+module.exports = {
+    bundleName: "Omni Suche automaitsche Info",
+    bundleDescription: "Das Modul öffnet das Popup automatisch, nachdem der Nutzer mit der Omnisuche gesucht hat."
+
+};

@@ -1,204 +1,281 @@
 {
-  "properties": {
-    "title": "Omnisearch Auto Info Sample",
-    "amdPackages": "apprt@^3.2.1"
-  },
-  "load": {
-    "bundleLocations": [
-      "localbundles",
-      "bundles"
-    ],
-    "allowedBundles": [
-      "system@^3.2.1",
-      "splashscreen@^3.2.1",
-      "map@^3.2.1",
-      "themes@^3.2.1",
-      "templates@^3.2.1",
-      "templatelayout@^3.2.1",
-      "windowmanager@^3.2.1",
-      "toolset@^3.2.1",
-      "toolrules@^3.2.1",
-      "basemaptoggler@^3.2.1",
-      "banner@^3.2.1",
-      "locator@^3.2.1",
-      "agssearch@^3.2.1",
-      "omnisearch@^3.2.1",
-      "custominfo@^3.2.1",
-      "dn_omnisearchautoinfo"
-    ],
-    "require": [
-      "${app}.app"
-    ],
-    "i18n": [
-      "bundle"
-    ]
-  },
-  "bundles": {
-    "agssearch": {
-      "AGSStore": [
-        {
-          "id": "airtraffic",
-          "title": "Airtraffic",
-          "description": "",
-          "idProperty": "OBJECTID",
-          "url": "https://services.conterra.de/arcgis/rest/services/mapapps/airtraffic/MapServer/1",
-          "useIn": [
+    "properties": {
+        "title": "${apptitle}"
+    },
+    "load": {
+        "bundleLocations": [
+            "localbundles",
+            "bundles"
+        ],
+        "allowedBundles": [
+            "system",
+            "console",
+            "notifier",
+            "splashscreen",
+            "templatelayout",
+            "template-seasons",
+            "theme-everlasting",
+            "map-init",
+            "toolset",
+            "banner",
+            "custominfo",
+            "legend",
+            "popups-default",
+            "scalebar",
+            "printing",
+            "share-link",
             "omnisearch",
-            "selection"
-          ],
-          "omniSearchLabelAttr": "osm_name",
-          "omniSearchSearchAttr": "osm_name",
-          "omniSearchTypingDelay": 500,
-          "omniSearchPageSize": 20,
-          "omniSearchDefaultLabel": "${search}",
-          "fetchIdProperty": true,
-          "enablePagination": false,
-          "filterOptions": {
-            "suggestContains": true,
-            "metadata": {
-              "fields": [
-                {
-                  "name": "OBJECTID",
-                  "title": "ID"
-                },
-                {
-                  "name": "aeroway",
-                  "title": "AEROWAY"
-                },
-                {
-                  "name": "OSMID",
-                  "title": "OSM ID"
-                },
-                {
-                  "name": "osm_name",
-                  "title": "NAME"
-                },
-                {
-                  "name": "osm_ref",
-                  "title": "REF"
-                },
-                {
-                  "name": "osm_type",
-                  "title": "TYPE"
-                },
-                {
-                  "name": "osm_operator",
-                  "title": "OPERATOR"
-                },
-                {
-                  "name": "osm_website",
-                  "title": "WEBSITE"
-                }
-              ]
-            }
-          }
-        }
-      ]
-    },
-    "banner": {
-      "BannerWidget": {
-        "label": "Developer Network",
-        "image": "https://www.conterra.de/~/media/conterra/images/site_logos/conterra-logo.ashx",
-        "imagePosition": "above",
-        "link": "http://developernetwork.conterra.de"
-      }
-    },
-    "custominfo": {
-      "CustomInfoToggleTool": [
-        {
-          "id": "customInfoTool",
-          "activateOnStartup": true,
-          "title": "Information",
-          "tooltip": "custominfo",
-          "iconClass": "icon-custom-info-info",
-          "toolClass": "ctInfo",
-          "togglable": true,
-          "widgetSettings": {
-            "title": "Information",
-            "content": "This app shows the functionality of the Omnisearch Auto Info Bundle which opens a feature info after a search was successful.",
-            "window": {
-              "marginBox": {
-                "w": 300,
-                "h": 100,
-                "l": 25,
-                "b": 70
-              },
-              "draggable": true,
-              "closable": true,
-              "modal": false,
-              "maximizable": false,
-              "resizable": false
-            }
-          }
-        }
-      ]
-    },
-    "omnisearch": {
-      "OmniSearchFactory": {
-        "displayLoadingIcon": true,
-        "comboBoxOpts": {
-          "selectFirstResultOnEnter": false,
-          "autoSelect": true
-        }
-      }
-    },
-    "map": {
-      "MapState": {
-        "initialExtent": {
-          "xmin": -1100000,
-          "ymin": 4000000,
-          "xmax": 3500000,
-          "ymax": 8800000,
-          "spatialReference": {
-            "wkid": 3857
-          }
-        }
-      },
-      "MapModelFactory": {
-        "_configData": {
-          "maps": [
-            {
-              "id": "default",
-              "glass_pane": [],
-              "operationalLayer": [],
-              "baseLayer": [
-                {
-                  "title": "${service.streets}",
-                  "service": "streets",
-                  "enabled": true
-                },
-                {
-                  "title": "${service.topo}",
-                  "service": "worldTopo",
-                  "enabled": false
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "MappingResourceRegistryFactory": {
-        "_knownServices": {
-          "services": [
-            {
-              "id": "worldTopo",
-              "type": "AGS_TILED",
-              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer"
-            },
-            {
-              "id": "streets",
-              "type": "AGS_TILED",
-              "url": "http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"
-            }
-          ]
-        }
-      }
-    },
-    "toolset": {
-      "ToolsetManager": {
-        "toolsets": [
+            "dn_omnisearchautoinfo",
+            "agssearch"
+        ],
+        "require": [
+            "${app}.app"
+        ],
+        "i18n": [
+            "bundle"
         ]
-      }
+    },
+    "bundles": {
+        "agssearch": {
+            "AGSStore": [
+                {
+                    "id": "airtraffic",
+                    "title": "Airtraffic",
+                    "description": "",
+                    "idProperty": "OBJECTID",
+                    "layerId": "airtraffic",
+                    "useIn": [
+                        "omnisearch",
+                        "selection"
+                    ],
+                    "omniSearchLabelAttr": "osm_name",
+                    "omniSearchSearchAttr": "osm_name",
+                    "omniSearchTypingDelay": 500,
+                    "omniSearchPageSize": 20,
+                    "omniSearchDefaultLabel": "${search}",
+                    "omniSearchAutoActivate": true,
+                    "enablePagination": false,
+                    "filterOptions": {
+                        "suggestContains": true,
+                        "metadata": {
+                            "fields": [
+                                {
+                                    "name": "OBJECTID",
+                                    "title": "ID"
+                                },
+                                {
+                                    "name": "aeroway",
+                                    "title": "AEROWAY"
+                                },
+                                {
+                                    "name": "OSMID",
+                                    "title": "OSM ID"
+                                },
+                                {
+                                    "name": "osm_name",
+                                    "title": "NAME"
+                                },
+                                {
+                                    "name": "osm_ref",
+                                    "title": "REF"
+                                },
+                                {
+                                    "name": "osm_type",
+                                    "title": "TYPE"
+                                },
+                                {
+                                    "name": "osm_operator",
+                                    "title": "OPERATOR"
+                                },
+                                {
+                                    "name": "osm_website",
+                                    "title": "WEBSITE"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "banner": {
+            "BannerWidget": {
+                "label": "Developer Network",
+                "image": "https://www.conterra.de/~/media/conterra/images/site_logos/conterra-logo.ashx",
+                "imagePosition": "above",
+                "link": "http://developernetwork.conterra.de"
+            }
+        },
+        "basemaptoggler": {
+            "Config": {
+                "nextBasemap": "hybrid"
+            }
+        },
+        "custominfo": {
+            "CustomInfoToggleTool": [
+                {
+                    "widgetSettings": {
+                        "content": "${info}",
+                        "window": {
+                            "marginBox": {
+                                "w": 320,
+                                "h": 500,
+                                "b": 50,
+                                "l": 20
+                            },
+                            "draggable": true,
+                            "closable": true,
+                            "maximizable": false,
+                            "resizable": true,
+                            "title": "Information"
+                        }
+                    },
+                    "type": "IMPRINT",
+                    "toolClass": "ctInfo",
+                    "title": "Information",
+                    "tooltip": "Zeige Information",
+                    "tooltipPositions": [
+                        "after",
+                        "above",
+                        "below",
+                        "before"
+                    ],
+                    "iconClass": "icon-custom-info-imprint",
+                    "togglable": true,
+                    "id": "IMPRINT_Imprint_CustomInfoTool",
+                    "rules" : {
+                        "activateOnStartup" : true
+                    }
+                }
+            ]
+        },
+        "map-init": {
+            "Config": {
+                "map": {
+                    "layers": [
+                        {
+                            "title": "Air Traffic",
+                            "type": "AGS_FEATURE",
+                            "url": "https://services.conterra.de/arcgis/rest/services/mapapps/airtraffic/MapServer/1",
+                            "queryable": true,
+                            "id": "airtraffic",
+                            "active": true
+                        }
+                    ],
+                    "basemap": "streets",
+                    "ground": {
+                        "url": "https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer",
+                        "type": "ELEVATION"
+                    }
+                },
+                "view": {
+                    "viewmode": "2D",
+                    "extent": {
+                        "xmin": 600000,
+                        "ymin": 5800000,
+                        "xmax": 1700000,
+                        "ymax": 7600000,
+                        "spatialReference": 3857
+                    }
+                }
+            }
+        },
+        "themes": {
+            "ThemeModel": {
+                "_selectedTheme": "everlasting"
+            },
+            "ThemeSelector": {
+                "componentEnabled": true
+            }
+        },
+        "templates": {
+            "TemplateModel": {
+                "_templates": [
+                    {
+                        "name": "seasons",
+                        "widgets": [
+                            {
+                                "widgetRole": "drawer_button",
+                                "attachTo": "map_topleft",
+                                "props": {
+                                    "layoutIndex": 0
+                                }
+                            },
+                            {
+                                "widgetRole": "sharelink",
+                                "window": {
+                                    "dockable": false,
+                                    "dockingBar": null
+                                }
+                            },
+                            {
+                                "widgetRole": "legend",
+                                "sublayout": [
+                                    "mobile_portrait",
+                                    "mobile_landscape"
+                                ],
+                                "window": {
+                                    "dockable": false,
+                                    "dockingBar": null
+                                }
+                            },
+                            {
+                                "widgetRole": "printing",
+                                "window": {
+                                    "dockable": false,
+                                    "dockingBar": null
+                                }
+                            },
+                            {
+                                "widgetRole": "banner",
+                                "sublayout": [
+                                    "mobile_portrait"
+                                ],
+                                "attachTo": "footer_right"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "toolset": {
+            "ToolsetManager": {
+                "toolsets": [
+                    {
+                        "id": "mapview_tools",
+                        "tools": [
+                            "locateMeTool",
+                            "zoomInTool",
+                            "zoomOutTool",
+                            "compassTool",
+                            "restoreInitialViewTool",
+                            "viewmodeSwitcherTool"
+                        ],
+                        "registerWidget": {
+                            "widgetRole": "mapview_tools"
+                        },
+                        "container": "ignore",
+                        "windowType": "container",
+                        "cssClass": "muted"
+                    },
+                    {
+                        "id": "drawer_left",
+                        "title": "Werkzeuge",
+                        "cssClass": "ct-main-app-menu",
+                        "tools": [
+                            "printingToggleTool",
+                            "sharelinkTool",
+                            "helloTool",
+                            "IMPRINT_Imprint_CustomInfoTool",
+                            "IMPRINT_Imprint_CustomInfoTool_mobile"
+                        ],
+                        "registerWidget": {
+                            "widgetRole": "drawer_button"
+                        },
+                        "container": "ignore",
+                        "windowType": "drawer_left"
+                    }
+                ]
+            }
+        }
     }
-  }
 }

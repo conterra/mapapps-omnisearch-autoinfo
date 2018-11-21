@@ -1,47 +1,43 @@
 {
-  "Bundle-SymbolicName": "dn_omnisearchautoinfo",
-  "Bundle-Version": "1.0.2-SNAPSHOT",
-  "Bundle-Name": "${bundleName}",
-  "Bundle-Description": "${bundleDescription}",
-  "Bundle-Vendor": "con terra GmbH",
-  "Product-Name": "devnet-mapapps-omnisearchautoinfo",
-  "Bundle-Category": [
-    "sample"
-  ],
-  "Require-Bundle": [
-    {
-      "name": "omnisearch",
-      "version": "^3.2.1"
-    },
-    {
-      "name": "contentviewer",
-      "version": "^3.2.1"
-    }
-  ],
-  "Bundle-Icon": {},
-  "Bundle-License": {},
-  "Components": [
-    {
-      "name": "OmniSearchContentViewerController",
-      "provides": [
-        "ct.api.omnisearch.ResultHandler"
-      ],
-      "properties": {
-        "id": "OmniSearchContentViewerController",
-        "type": [
-          "select"
-        ]
-      },
-      "references": [
+    "name": "dn_omnisearchautoinfo",
+    "version": "2.0.0-SNAPSHOT",
+    "title": "${bundleName}",
+    "description": "${bundleDescription}",
+    "vendor": "con terra GmbH",
+    "keywords": [
+        "omisearch"
+    ],
+    "icon": {},
+    "license": {},
+    "Require-Bundle": [
         {
-          "name": "_mapModel",
-          "providing": "ct.mapping.map.MapModel"
+            "name": "omnisearch",
+            "version": "^4.5.0"
         },
         {
-          "name": "_contentViewer",
-          "providing": "ct.contentviewer.ContentViewer"
+            "name": "popups-default",
+            "version": "^4.5.0"
         }
-      ]
-    }
-  ]
+    ],
+    "productName": "devnet-mapapps-remote-project-blueprint",
+    "components": [
+        {
+            "name": "OmniSearchContentViewerController",
+            "provides": [
+                "ct.api.omnisearch.ResultHandler"
+            ],
+            "properties": {
+                "id": "OmniSearchContentViewerController",
+                "type": [
+                    "select"
+                ]
+            },
+            "references": [
+                {
+                    "name": "_mapWidgetModel",
+                    "providing": "map-widget.MapWidgetModel"
+                }
+            ]
+        }
+    ]
 }
