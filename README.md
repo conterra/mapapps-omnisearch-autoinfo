@@ -1,5 +1,5 @@
 # Omnisearch Auto Info Bundle
-The Omnisearch Auto Info Bundle opens a feature info after a search was successful.
+The Omnisearch Auto Info Bundle opens a popup after a search was successful.
 
 ## Sample App
 https://demos.conterra.de/mapapps/resources/apps/downloads_omnisearch_autoinfo/index.html
