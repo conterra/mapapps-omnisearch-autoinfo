@@ -21,7 +21,7 @@ class OmniSearchContentViewerController {
         let properties = this._properties || {};
         this.id = properties.id || this.id;
         this.type = properties.type || this.type;
-        this.mapModel = this._mapWidgetModel;
+        this.mapWidgetModel = this._mapWidgetModel;
     }
 
     deactivate() {
@@ -31,7 +31,7 @@ class OmniSearchContentViewerController {
     handle(item, opts) {
         opts = opts || {};
         let store = opts.store;
-        let layers = this.mapModel.get("map").get("layers");
+        let layers = this.mapWidgetModel.get("map").get("layers");
         let allLayersAndSublayers = layers.flatten((item) => {
             return item.layers || item.sublayers;
         });
@@ -53,7 +53,7 @@ class OmniSearchContentViewerController {
 
         graphic.layer = layer;
 
-        this.mapModel.view.popup.open({
+        this.mapWidgetModel.view.popup.open({
             features: [graphic],
             updateLocationEnabled: true
         });

@@ -142,8 +142,8 @@
                     "iconClass": "icon-custom-info-imprint",
                     "togglable": true,
                     "id": "IMPRINT_Imprint_CustomInfoTool",
-                    "rules" : {
-                        "activateOnStartup" : true
+                    "rules": {
+                        "activateOnStartup": true
                     }
                 }
             ]

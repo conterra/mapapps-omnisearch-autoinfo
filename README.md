@@ -10,7 +10,6 @@ Add the bundle to your app and load an AGSSearch store with a layerId.
 ## Requirements
 * map.apps 4.5.0 (or above)
 
-
 ## Restrictions
 The layer needs to be loaded in the map and has to have a popup template.
 
