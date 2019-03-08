@@ -25,8 +25,8 @@
             "printing",
             "share-link",
             "omnisearch",
-            "dn_omnisearchautoinfo",
-            "agssearch"
+            "agssearch",
+            "dn_omnisearchautoinfo"
         ],
         "require": [
             "${app}.app"

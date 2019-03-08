@@ -5,37 +5,33 @@
     "description": "${bundleDescription}",
     "vendor": "con terra GmbH",
     "keywords": [
-        "omisearch"
+        "omisearch",
+        "popup"
     ],
     "icon": {},
     "license": {},
-    "Require-Bundle": [
-        {
-            "name": "omnisearch",
-            "version": "^4.5.0"
-        },
-        {
-            "name": "popups-default",
-            "version": "^4.5.0"
-        }
-    ],
-    "productName": "devnet-mapapps-remote-project-blueprint",
+    "productName": "devnet-mapapps-omnisearchautoinfo",
+    "dependencies": {
+        "omnisearch": "^4.5.0",
+        "resultcenter": "^4.5.0",
+        "popups": "^4.5.0"
+    },
     "components": [
         {
-            "name": "OmniSearchContentViewerController",
+            "name": "OmniSearchPopupController",
             "provides": [
                 "ct.api.omnisearch.ResultHandler"
             ],
             "properties": {
-                "id": "OmniSearchContentViewerController",
+                "id": "OmniSearchPopupController",
                 "type": [
                     "select"
                 ]
             },
             "references": [
                 {
-                    "name": "_mapWidgetModel",
-                    "providing": "map-widget.MapWidgetModel"
+                    "name": "_openPopupService",
+                    "providing": "resultcenter.OpenPopupService"
                 }
             ]
         }

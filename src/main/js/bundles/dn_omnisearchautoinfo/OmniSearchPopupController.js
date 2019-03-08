@@ -13,7 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-module.exports = {
-    bundleName: "Omni Suche automaitsche Info",
-    bundleDescription: "Das Modul öffnet das Popup automatisch, nachdem der Nutzer mit der Omnisuche gesucht hat."
-};
+
+class OmniSearchPopupController {
+
+    activate() {
+        let properties = this._properties || {};
+        this.id = properties.id || this.id;
+        this.type = properties.type || this.type;
+    }
+
+    handle(item, opts) {
+        opts = opts || {};
+        let store = opts.store;
+
+        let idProperty = store.idProperty;
+        this._openPopupService.openPopup(item[idProperty], {"store": store});
+    }
+}
+
+module.exports = OmniSearchPopupController;
