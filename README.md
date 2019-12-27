@@ -5,13 +5,9 @@ The Omnisearch Auto Info Bundle opens a popup after a search was successful.
 https://demos.conterra.de/mapapps/resources/apps/downloads_omnisearch_autoinfo/index.html
 
 ## Installation Guide
-Add the bundle to your app and load an AGSSearch store with a layerId.
+**Requirement: map.apps 4.5.0**
 
-## Requirements
-* map.apps 4.5.0 (or above)
-
-## Restrictions
-The layer needs to be loaded in the map and has to have a popup template.
+[dn_omnisearchautoinfo Documentation](https://github.com/conterra/mapapps-omnisearch-autoinfo/tree/master/src/main/js/bundles/dn_omnisearchautoinfo)
 
 ## Development Guide
 ### Define the mapapps remote base
