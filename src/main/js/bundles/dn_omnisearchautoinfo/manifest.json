@@ -30,7 +30,8 @@
         "id": "OmniSearchContentViewerController",
         "type": [
           "select"
-        ]
+        ],
+        "ignoreStores": []
       },
       "references": [
         {
