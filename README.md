@@ -1,8 +1,7 @@
+⚠️ This bundle is no longer needed for map.apps line 4. Since map.apps 4.9.0 opening a popup after a search is a core functionality.
+
 # Omnisearch Auto Info Bundle
 The Omnisearch Auto Info Bundle opens a popup after a search was successful.
-
-## Sample App
-https://demos.conterra.de/mapapps/resources/apps/downloads_omnisearch_autoinfo/index.html
 
 ## Installation Guide
 **Requirement: map.apps 4.5.0**
