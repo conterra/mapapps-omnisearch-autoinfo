@@ -1,10 +1,6 @@
 # Omnisearch Auto Info Bundle
 The Omnisearch Auto Info Bundle opens a feature info after a search was successful.
 
-Sample App
-------------------
-https://demos.conterra.de/mapapps/resources/apps/downloads_omnisearch_autoinfo/index.html
-
 Installation Guide
 ------------------
 Just add the bundle to your app.
